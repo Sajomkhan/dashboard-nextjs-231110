@@ -24,3 +24,12 @@ a {
   color: inherit;
   text-decoration: none;
 }
+
+input {
+  background-color: inherit;
+  padding: 3px;
+}
+
+input:focus {
+  outline: 1px solid #7777;
+}
