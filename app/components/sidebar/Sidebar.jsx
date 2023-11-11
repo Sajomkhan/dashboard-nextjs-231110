@@ -1,85 +1,30 @@
-import {
-  MdDashboard,
-  MdSupervisedUserCircle,
-  MdShoppingBag,
-  MdAttachMoney,
-  MdWork,
-  MdAnalytics,
-  MdPeople,
-  MdOutlineSettings,
-  MdHelpCenter,
-  MdLogout,
-} from "react-icons/md";
-
-const menuItems = [
-  {
-    title: "Pages",
-    list: [
-      {
-        title: "Dashboard",
-        path: "/dashboard",
-        icon: <MdDashboard />,
-      },
-      {
-        title: "Users",
-        path: "/dashboard/users",
-        icon: <MdSupervisedUserCircle />,
-      },
-      {
-        title: "Products",
-        path: "/dashboard/products",
-        icon: <MdShoppingBag />,
-      },
-      {
-        title: "Transactions",
-        path: "/dashboard/transactions",
-        icon: <MdAttachMoney />,
-      },
-    ],
-  },
-  {
-    title: "Analytics",
-    list: [
-      {
-        title: "Revenue",
-        path: "/dashboard/revenue",
-        icon: <MdWork />,
-      },
-      {
-        title: "Reports",
-        path: "/dashboard/reports",
-        icon: <MdAnalytics />,
-      },
-      {
-        title: "Teams",
-        path: "/dashboard/teams",
-        icon: <MdPeople />,
-      },
-    ],
-  },
-  {
-    title: "User",
-    list: [
-      {
-        title: "Settings",
-        path: "/dashboard/settings",
-        icon: <MdOutlineSettings />,
-      },
-      {
-        title: "Help",
-        path: "/dashboard/help",
-        icon: <MdHelpCenter />,
-      },
-    ],
-  },
-];
+"use client";
+import Link from "next/link";
+import { menuItems } from "@/app/data";
+import { usePathname } from "next/navigation";
 
 const Sidebar = () => {
+  const pathname = usePathname();
+
   return (
-    <div className="">
+    <div className="min-h-screen">
       <ul>
-        {menuItems.map((item) => (
-          <li key={item.title}>{item.title}</li>
+        {menuItems.map((cat) => (
+          <div key={cat.title} className={"mb-5 flex flex-col gap-2"}>
+            <li>{cat.title}</li>
+            {cat.list.map((item) => (
+              <Link
+                key={item.title}
+                href={item.path}
+                className={`flex gap-2 items-center pl-3 ${
+                  pathname === item.path ? "text-teal-400" : ""
+                }`}
+              >
+                {item.icon}
+                {item.title}
+              </Link>
+            ))}
+          </div>
         ))}
       </ul>
     </div>
