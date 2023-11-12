@@ -3,7 +3,7 @@ import styles from "./dashboard.module.css";
 
 const Transaction = () => {
   return (
-    <div className="bg-[var(--bgSoft)] w-full p-4 font-light">
+    <div className="bg-[var(--bgSoft)] w-full p-4 font-light rounded-lg">
       <h1 className="text-lg mb-4">Latest Transactions</h1>
       <table className={`w-full ${styles.table}`}>
         <thead className="font-semibold">

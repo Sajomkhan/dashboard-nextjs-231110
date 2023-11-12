@@ -15,7 +15,7 @@ const Dashboard = () => {
         <Transaction />
         <Chart />
       </div>
-      <div className="col-span-1 flex flex-col gap-4">
+      <div className="col-span-1 flex flex-col gap-4 mr-4">
         <Rightbar />
       </div>
     </div>

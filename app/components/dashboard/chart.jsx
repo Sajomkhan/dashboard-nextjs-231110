@@ -50,8 +50,9 @@ const data = [
 
 const Chart = () => {
   return (
-    <div>
-      <ResponsiveContainer width="100%" height="100%">
+    <div className="h-[450px] bg-[var(--bgSoft)] rounded-lg p-5 mb-10">
+      <h1 className="mb-5 text-lg">Weekly Recap</h1>
+      <ResponsiveContainer width="100%" height="90%">
         <LineChart
           width={500}
           height={300}
@@ -63,22 +64,29 @@ const Chart = () => {
             bottom: 5,
           }}
         >
-          <CartesianGrid strokeDasharray="3 3" />
+          {/* <CartesianGrid strokeDasharray="1 3" /> */}
           <XAxis dataKey="name" />
           <YAxis />
-          <Tooltip />
+          <Tooltip
+            contentStyle={{
+              background: "rgb(35, 45, 65)",
+              border: "none",
+            }}
+          />
           <Legend />
           <Line
             type="monotone"
-            dataKey="pv"
+            dataKey="visit"
             stroke="#8884d8"
-            strokeDasharray="5 5"
+            strokeDasharray=""
+            // strokeDasharray="5 5"
           />
           <Line
             type="monotone"
-            dataKey="uv"
+            dataKey="click"
             stroke="#82ca9d"
-            strokeDasharray="3 4 5 2"
+            strokeDasharray=""
+            // strokeDasharray="3 4 5 2"
           />
         </LineChart>
       </ResponsiveContainer>

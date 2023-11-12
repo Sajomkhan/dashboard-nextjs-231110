@@ -3,11 +3,11 @@
 @tailwind utilities;
 
 :root {
-  --bg: #151c2c;
-  --bgSoft: #182232;
+  --bg: #151c2c; 
+  --bgSoft: #182232; /* rgb(25, 35, 50)  */
   --text: #dddd;
   --textSoft: #b7bac1;
-  --bgHover: rgb(80, 100, 130, 0.3);
+  --bgHover: rgb(35, 45, 65);
   --primary: teal;
   --positive: teal;
   --negative: red;
