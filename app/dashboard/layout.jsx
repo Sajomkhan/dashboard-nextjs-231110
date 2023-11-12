@@ -1,5 +1,5 @@
-import Navbar from "../components/navbar/Navbar";
-import Sidebar from "../components/sidebar/Sidebar";
+import Navbar from "../components/dashboard/navbar";
+import Sidebar from "../components/dashboard/sidebar";
 
 export const metadata = {
   title: "Admin & Deshboard",
@@ -14,7 +14,7 @@ export default function Layout({ children }) {
       </div>
       <div className="col-span-4 px-2">
         <Navbar />
-        {children}
+        <div className="px-6">{children}</div>
       </div>
     </div>
   );

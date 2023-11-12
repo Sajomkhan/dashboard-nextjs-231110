@@ -30,8 +30,8 @@ const Sidebar = () => {
               <Link
                 key={item.title}
                 href={item.path}
-                className={`flex gap-2 items-center hover:bg-gray-700/50 rounded-sm pl-4 py-1 ${
-                  pathname === item.path ? "bg-gray-700/50" : ""
+                className={`flex gap-2 items-center hover:bg-[var(--bgHover)] rounded-sm pl-4 py-1 ${
+                  pathname === item.path ? "bg-[var(--bgHover)]" : ""
                 }`}
               >
                 <span>{item.icon}</span>
