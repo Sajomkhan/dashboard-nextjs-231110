@@ -8,7 +8,7 @@ const Sidebar = () => {
   const pathname = usePathname();
 
   return (
-    <div className="min-h-screen">
+    <div className="absolute top-0 left-0 w-full min-h-screen bg-[var(--bgSoft)] outset-0 p-7">
       <div className="flex gap-4 mb-7 items-center">
         <Image
           className="rounded-full"
