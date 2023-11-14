@@ -1,8 +1,8 @@
 import Search from "@/app/components/dashboard/search";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
 import styles from "../../components/dashboard/dashboard.module.css";
+import Pagination from "@/app/components/dashboard/pagination";
 
 const users = [
   {
@@ -11,6 +11,20 @@ const users = [
     createdAt: "Nov 22 2023",
     role: "client",
     status: "active",
+  },
+  {
+    name: "Dhoe",
+    email: "dhoe.gmail.com",
+    createdAt: "Mer 25 2023",
+    role: "client",
+    status: "passive",
+  },
+  {
+    name: "Dhoe",
+    email: "dhoe.gmail.com",
+    createdAt: "Mer 25 2023",
+    role: "client",
+    status: "passive",
   },
   {
     name: "Dhoe",
@@ -47,7 +61,7 @@ const UserPage = () => {
           {users.map((user) => (
             <tr key={user.name}>
               <td>
-                <div className="flex gap-2 items-center">
+                <div className="flex gap-3 items-center">
                   <Image
                     src="/noavatar.png"
                     alt=""
@@ -72,6 +86,7 @@ const UserPage = () => {
           ))}
         </tbody>
       </table>
+      <Pagination />
     </div>
   );
 };

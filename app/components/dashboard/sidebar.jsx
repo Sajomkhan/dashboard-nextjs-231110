@@ -9,7 +9,7 @@ const Sidebar = () => {
 
   return (
     <div className="absolute top-0 left-0 w-full min-h-screen bg-[var(--bgSoft)] outset-0 p-7">
-      <div className="flex gap-4 mb-7 items-center">
+      <div className="flex gap-2 mb-7 items-center">
         <Image
           className="rounded-full"
           src="/noavatar.png"

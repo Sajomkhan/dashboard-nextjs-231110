@@ -2,7 +2,7 @@
 @tailwind base;
 
 .btn{
-  @apply px-2 py-1 rounded-md ease-in-out duration-700;
+  @apply px-2 py-1 rounded-md ease-in-out duration-100 hover:opacity-70
 }
 
 .btn_primary{
@@ -29,6 +29,8 @@
   --bgHover: rgb(35, 45, 65);
   --primary: teal;
   --danger: rgb(178, 14, 91);
+  --active: #eeee;
+  --deactive: #8888;
 }
 
 * {
@@ -60,4 +62,16 @@ input:focus {
 
 .gradient{
   background: linear-gradient(to bottom, #194c33, #bbb);
+}
+
+.Pending{
+  background-color: #f7cb7375;
+}
+
+.Done{
+  background-color: #afd6ee75;
+}
+
+.Cancelled{
+  background-color: #f7737375;
 }
