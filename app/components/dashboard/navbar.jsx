@@ -13,7 +13,7 @@ const Navbar = () => {
     <div className="flex items-center justify-between bg-[var(--bgSoft)] px-7 py-3">
       <div className="uppercase font-bold">{pathname.split("/").pop()}</div>
       <div className="flex items-center gap-10">
-        <div className="flex gap-1 items-center bg-gray-800 rounded-lg px-3 py-2">
+        <div className="flex gap-1 items-center bg-[var(--bgHover)] rounded-lg px-3 py-2">
           <MdSearch size={18} />
           <input type="text" placeholder="Search" />
         </div>

@@ -1,4 +1,23 @@
+
 @tailwind base;
+
+.btn{
+  @apply px-2 py-1 rounded-md ease-in-out duration-700;
+}
+
+.btn_primary{
+  @apply btn bg-[var(--primary)]
+}
+
+.btn_danger{
+  @apply btn bg-[var(--danger)]
+}
+
+.btn_gradient {
+  @apply bg-gradient-to-r from-teal-600 to-blue-600 hover:from-blue-800 hover:to-teal-800 
+    text-white py-2 px-5 rounded-md shadow-md hover:cursor-pointer;
+}
+
 @tailwind components;
 @tailwind utilities;
 
@@ -9,8 +28,7 @@
   --textSoft: #b7bac1;
   --bgHover: rgb(35, 45, 65);
   --primary: teal;
-  --positive: teal;
-  --negative: red;
+  --danger: rgb(178, 14, 91);
 }
 
 * {
@@ -35,6 +53,11 @@ input {
 }
 
 input:focus {
-  outline: 1px solid #7777;
+  /* outline: none */
+  outline: 2px solid #5555;
+  padding: 1px 1px;
 }
 
+.gradient{
+  background: linear-gradient(to bottom, #194c33, #bbb);
+}

@@ -10,7 +10,7 @@ const Card = ({ item }) => {
         <span>Total User</span>
         <span className="text-lg font-bold">10.273</span>
         <span>
-          <span className="text-[var(--positive)]">12%</span> more than previus
+          <span className="text-[var(--primary)]">12%</span> more than previus
           week
         </span>
       </div>
