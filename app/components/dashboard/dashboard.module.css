@@ -1,6 +1,4 @@
 
-
-
 .table td{
     padding: 7px;
   }
@@ -9,4 +7,18 @@
     padding: 3px 5px;
     border-radius: 3px;
     
+  }
+
+  .product input,  .product select{
+    background-color: var(--bg);
+    padding: 8px;
+    border-radius: 5px;
+    width: 240px;
+  }
+
+ .product textarea{
+    background-color: var(--bg);
+    padding: 8px;
+    border-radius: 5px;
+    width: 505px;
   }

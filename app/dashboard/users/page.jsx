@@ -40,7 +40,7 @@ const UserPage = () => {
     <div className="bg-[var(--bgSoft)] p-4 rounded-sm">
       <div className="flex justify-between items-center mr-4 mb-7">
         <Search placeholder="Search for a user..." />
-        <Link href="">
+        <Link href="/dashboard/users/add">
           <button className="btn_primary">Add New</button>
         </Link>
       </div>
