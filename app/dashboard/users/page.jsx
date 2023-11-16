@@ -77,10 +77,12 @@ const UserPage = () => {
               <td>{user.role}</td>
               <td>{user.status}</td>
               <td>
-                <Link href="/" className="flex gap-4">
-                  <button className={`btn_primary`}>View</button>
+                <div className="flex gap-4">
+                  <Link href="/dashboard/users/id">
+                    <button className={`btn_primary`}>View</button>
+                  </Link>
                   <button className={`btn_danger`}>Delete</button>
-                </Link>
+                </div>
               </td>
             </tr>
           ))}

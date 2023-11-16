@@ -1,0 +1,6 @@
+.login input{
+    background-color: var(--bg);
+    padding: 8px;
+    border-radius: 5px;
+    width: 275px;
+  }

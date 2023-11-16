@@ -54,14 +54,14 @@ input, textarea, select {
   padding: 3px;
 }
 
-input:focus {
+input:focus, textarea:focus {
   /* outline: none */
   outline: 2px solid #5555;
   padding: 1px 1px;
 }
 
 input::placeholder, textarea::placeholder{
-  color: #aaaa;
+  color: #8888;
 }
 
 select{

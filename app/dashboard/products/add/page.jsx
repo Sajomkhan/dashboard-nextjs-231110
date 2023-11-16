@@ -1,30 +1,65 @@
+import Image from "next/image";
 import styles from "../../../components/dashboard/dashboard.module.css";
 
 const AddProduct = () => {
   return (
-    <div className={`${styles.product} w-full mt-10`}>
+    <div
+      className={`${styles.input} flex flex-wrap gap-10 justify-center items-center mt-10`}
+    >
+      {/* --------------Image div---------------- */}
+      <div className="bg-[var(--bgSoft)] bg-cover bg-center rounded-lg p-11">
+        <Image
+          src="/noproduct.jpg"
+          alt=""
+          width={220}
+          height={220}
+          className="rounded-lg"
+        />
+      </div>
+      {/* --------------Form div---------------- */}
       <form
         action=""
-        className={`mx-auto w-[600px] bg-[var(--bgSoft)] flex flex-wrap gap-7 p-10 rounded-lg`}
+        className={`w-[600px] bg-[var(--bgSoft)] flex flex-wrap gap-7 p-10 rounded-lg`}
       >
-        <input type="text" placeholder="Title" name="title" required />
-        <select name="cat" id="cat">
-          <option value="general">Choose a category</option>
-          <option value="Kitchen">Kitchen</option>
-          <option value="Phone">Phone</option>
-          <option value="Computer">Computer</option>
-        </select>
-        <input type="number" placeholder="Price" name="price" />
-        <input type="number" placeholder="Stock" name="stock" />
-        <input type="Text" placeholder="Color" name="color" />
-        <input type="Text" placeholder="Size" name="size" />
-        <textarea
-          name="desc"
-          id="desc"
-          cols="30"
-          rows="5"
-          placeholder="Description"
-        />
+        <div className="flex flex-col gap-1">
+          <label htmlFor="title">Title:</label>
+          <input
+            type="text"
+            placeholder="Product Title"
+            name="title"
+            required
+          />
+        </div>
+        <div className="flex flex-col gap-1">
+          <label htmlFor="price">Price:</label>
+          <input type="text" placeholder="Price" name="price" required />
+        </div>
+        <div className="flex flex-col gap-1">
+          <label htmlFor="stock">Stock:</label>
+          <input type="text" placeholder="Stock" name="stock" required />
+        </div>
+        <div className="flex flex-col gap-1">
+          <label htmlFor="color">Color:</label>
+          <input type="text" placeholder="Color" name="color" required />
+        </div>
+        <div className="flex flex-col gap-1">
+          <label htmlFor="cat">Category:</label>
+          <select name="cat" id="cat">
+            <option value="kitchen">Kitchen</option>
+            <option value="computer">Computer</option>
+            <option value="phone">Phone</option>
+          </select>
+        </div>
+        <div className="flex flex-col gap-1">
+          <label htmlFor="desc">Product Description:</label>
+          <textarea
+            name="desc"
+            id="desc"
+            cols="30"
+            rows="6"
+            placeholder="Product description"
+          />
+        </div>
         <button className="btn_primary px-5 py-3 font-semibold">Submit</button>
       </form>
     </div>

@@ -9,16 +9,23 @@
     
   }
 
-  .product input,  .product select{
+  .input input,  .input select{
     background-color: var(--bg);
     padding: 8px;
     border-radius: 5px;
     width: 240px;
   }
 
- .product textarea{
+ .input textarea{
     background-color: var(--bg);
     padding: 8px;
     border-radius: 5px;
     width: 505px;
+  }
+
+  .login input{
+    background-color: var(--bg);
+    padding: 8px;
+    border-radius: 5px;
+    width: 275px;
   }

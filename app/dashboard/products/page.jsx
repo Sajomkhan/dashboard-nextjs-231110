@@ -70,10 +70,12 @@ const ProductsPage = () => {
               <td>{product.createdAt}</td>
               <td>{product.stock}</td>
               <td>
-                <Link href="/" className="flex gap-4">
-                  <button className={`btn_primary`}>View</button>
+                <div className="flex gap-4">
+                  <Link href="/dashboard/products/id">
+                    <button className={`btn_primary`}>View</button>
+                  </Link>
                   <button className={`btn_danger`}>Delete</button>
-                </Link>
+                </div>
               </td>
             </tr>
           ))}

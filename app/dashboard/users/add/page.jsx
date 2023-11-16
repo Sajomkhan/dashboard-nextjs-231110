@@ -1,30 +1,58 @@
+import Image from "next/image";
 import styles from "../../../components/dashboard/dashboard.module.css";
 
 const AddUser = () => {
   return (
-    <div className={`${styles.product} w-full mt-10`}>
+    <div
+      className={`${styles.input} flex flex-wrap gap-10 justify-center items-center mt-10`}
+    >
+      {/* --------------Image div---------------- */}
+      <div className="bg-[var(--bgSoft)] bg-cover bg-center rounded-lg p-11">
+        <Image
+          src="/noavatar.png"
+          alt=""
+          width={220}
+          height={220}
+          className="rounded-lg"
+        />
+      </div>
+      {/* --------------Form div---------------- */}
       <form
         action=""
-        className={`mx-auto w-[600px] bg-[var(--bgSoft)] flex flex-wrap gap-7 p-10 rounded-lg`}
+        className={`w-[600px] bg-[var(--bgSoft)] flex flex-wrap gap-7 p-10 rounded-lg`}
       >
-        <input type="text" placeholder="User name" name="username" required />
-        <input type="text" placeholder="Email" name="email" required />
-        <input type="text" placeholder="Passowrd" name="password" required />
-        <select name="isAdmin" id="isAdmin">
-          <option value={true} selected>
-            Is admin?
-          </option>
-          <option value={true}>Yes</option>
-          <option value={false}>No</option>
-        </select>
-
-        <textarea
-          name="address"
-          id="desc"
-          cols="30"
-          rows="3"
-          placeholder="Address"
-        />
+        <div className="flex flex-col gap-1">
+          <label htmlFor="username">User Name:</label>
+          <input type="text" placeholder="User Name" name="username" required />
+        </div>
+        <div className="flex flex-col gap-1">
+          <label htmlFor="email">Email:</label>
+          <input type="text" placeholder="Email" name="email" required />
+        </div>
+        <div className="flex flex-col gap-1">
+          <label htmlFor="password">Password:</label>
+          <input type="text" placeholder="Passowrd" name="password" required />
+        </div>
+        <div className="flex flex-col gap-1">
+          <label htmlFor="isAdmin">Is Admin:</label>
+          <select name="isAdmin" id="isAdmin">
+            <option value={true} selected>
+              Is admin?
+            </option>
+            <option value={true}>Yes</option>
+            <option value={false}>No</option>
+          </select>
+        </div>
+        <div className="flex flex-col gap-1">
+          <label htmlFor="address">Address:</label>
+          <textarea
+            name="address"
+            id="desc"
+            cols="30"
+            rows="3"
+            placeholder="Address"
+          />
+        </div>
         <button className="btn_primary px-5 py-3 font-semibold">Submit</button>
       </form>
     </div>
