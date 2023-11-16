@@ -7,12 +7,12 @@ const AddUser = () => {
         action=""
         className={`mx-auto w-[600px] bg-[var(--bgSoft)] flex flex-wrap gap-7 p-10 rounded-lg`}
       >
-        <input type="text" placeholder="Username" name="username" required />
+        <input type="text" placeholder="User name" name="username" required />
         <input type="text" placeholder="Email" name="email" required />
         <input type="text" placeholder="Passowrd" name="password" required />
         <select name="isAdmin" id="isAdmin">
-          <option value={false} selected>
-            Is Admin?
+          <option value={true} selected>
+            Is admin?
           </option>
           <option value={true}>Yes</option>
           <option value={false}>No</option>
