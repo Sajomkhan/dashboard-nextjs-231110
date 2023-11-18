@@ -45,6 +45,7 @@ const AddProduct = () => {
         <div className="flex flex-col gap-1">
           <label htmlFor="cat">Category:</label>
           <select name="cat" id="cat">
+            <option selected>Select Category</option>
             <option value="kitchen">Kitchen</option>
             <option value="computer">Computer</option>
             <option value="phone">Phone</option>

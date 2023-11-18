@@ -73,3 +73,58 @@ export const menuItems = [
     ],
   },
 ];
+
+export const users = [
+  {
+    name: "Johne",
+    email: "johne.gmail.com",
+    createdAt: "Nov 22 2023",
+    role: "client",
+    status: "active",
+  },
+  {
+    name: "Dhoe",
+    email: "dhoe.gmail.com",
+    createdAt: "Mer 25 2023",
+    role: "client",
+    status: "passive",
+  },
+  {
+    name: "Dhoe",
+    email: "dhoe.gmail.com",
+    createdAt: "Mer 25 2023",
+    role: "client",
+    status: "passive",
+  },
+  {
+    name: "Dhoe",
+    email: "dhoe.gmail.com",
+    createdAt: "Mer 25 2023",
+    role: "client",
+    status: "passive",
+  },
+];
+
+export const products = [
+  {
+    title: "Watch",
+    desc: "It's a popular watch",
+    price: 24,
+    createdAt: "Nov 22 2023",
+    stock: "45",
+  },
+  {
+    title: "iPhone",
+    desc: "New model iPhone",
+    price: 720,
+    createdAt: "Nov 22 2023",
+    stock: "32",
+  },
+  {
+    title: "Drone",
+    desc: "It's a mordern technology",
+    price: 650,
+    createdAt: "Nov 22 2023",
+    stock: "22",
+  },
+];

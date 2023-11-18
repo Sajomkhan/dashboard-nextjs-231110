@@ -36,8 +36,17 @@ const SingleUser = () => {
         <div className="flex flex-col gap-1">
           <label htmlFor="isAdmin">Is Admin:</label>
           <select name="isAdmin" id="isAdmin">
+            <option selected>Select role</option>
             <option value={false}>No</option>
             <option value={true}>Yes</option>
+          </select>
+        </div>
+        <div className="flex flex-col gap-1">
+          <label htmlFor="isActive">Is Active:</label>
+          <select name="isActive" id="isActive">
+            <option selected>Select active</option>
+            <option value={true}>Yes</option>
+            <option value={false}>No</option>
           </select>
         </div>
         <div className="flex flex-col gap-1">

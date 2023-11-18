@@ -36,9 +36,15 @@ const AddUser = () => {
         <div className="flex flex-col gap-1">
           <label htmlFor="isAdmin">Is Admin:</label>
           <select name="isAdmin" id="isAdmin">
-            <option value={true} selected>
-              Is admin?
-            </option>
+            <option selected>Select role</option>
+            <option value={true}>Yes</option>
+            <option value={false}>No</option>
+          </select>
+        </div>
+        <div className="flex flex-col gap-1">
+          <label htmlFor="isActive">Is Active:</label>
+          <select name="isActive" id="isActive">
+            <option selected>select active</option>
             <option value={true}>Yes</option>
             <option value={false}>No</option>
           </select>

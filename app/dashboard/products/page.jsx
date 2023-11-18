@@ -1,32 +1,9 @@
 import Search from "@/app/components/dashboard/search";
 import Image from "next/image";
-import Link from "next/link";
 import styles from "../../components/dashboard/dashboard.module.css";
 import Pagination from "@/app/components/dashboard/pagination";
-
-const products = [
-  {
-    title: "Watch",
-    desc: "It's a popular watch",
-    price: 24,
-    createdAt: "Nov 22 2023",
-    stock: "45",
-  },
-  {
-    title: "iPhone",
-    desc: "New model iPhone",
-    price: 720,
-    createdAt: "Nov 22 2023",
-    stock: "32",
-  },
-  {
-    title: "Drone",
-    desc: "It's a mordern technology",
-    price: 650,
-    createdAt: "Nov 22 2023",
-    stock: "22",
-  },
-];
+import Link from "next/link";
+import { products } from "@/app/data";
 
 const ProductsPage = () => {
   return (

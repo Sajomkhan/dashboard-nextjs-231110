@@ -3,39 +3,13 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "../../components/dashboard/dashboard.module.css";
 import Pagination from "@/app/components/dashboard/pagination";
+import { users } from "@/app/data";
+import { fetchUsers } from "@/app/lib/fetcher";
 
-const users = [
-  {
-    name: "Johne",
-    email: "johne.gmail.com",
-    createdAt: "Nov 22 2023",
-    role: "client",
-    status: "active",
-  },
-  {
-    name: "Dhoe",
-    email: "dhoe.gmail.com",
-    createdAt: "Mer 25 2023",
-    role: "client",
-    status: "passive",
-  },
-  {
-    name: "Dhoe",
-    email: "dhoe.gmail.com",
-    createdAt: "Mer 25 2023",
-    role: "client",
-    status: "passive",
-  },
-  {
-    name: "Dhoe",
-    email: "dhoe.gmail.com",
-    createdAt: "Mer 25 2023",
-    role: "client",
-    status: "passive",
-  },
-];
+const UserPage = async () => {
+  const user = await fetchUsers();
+  console.log(user);
 
-const UserPage = () => {
   return (
     <div className="bg-[var(--bgSoft)] p-4 rounded-sm">
       <div className="flex justify-between items-center mr-4 mb-7">
