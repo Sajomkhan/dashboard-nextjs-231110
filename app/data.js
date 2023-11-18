@@ -76,32 +76,32 @@ export const menuItems = [
 
 export const users = [
   {
-    name: "Johne",
+    username: "Johne",
     email: "johne.gmail.com",
     createdAt: "Nov 22 2023",
-    role: "client",
-    status: "active",
+    isAdmin: "client",
+    isActive: "active",
   },
   {
-    name: "Dhoe",
+    username: "Dhoe",
     email: "dhoe.gmail.com",
     createdAt: "Mer 25 2023",
-    role: "client",
-    status: "passive",
+    isAdmin: "client",
+    isActive: "passive",
   },
   {
-    name: "Dhoe",
+    username: "Dhoe",
     email: "dhoe.gmail.com",
     createdAt: "Mer 25 2023",
-    role: "client",
-    status: "passive",
+    isAdmin: "client",
+    isActive: "passive",
   },
   {
-    name: "Dhoe",
+    username: "Dhoe",
     email: "dhoe.gmail.com",
     createdAt: "Mer 25 2023",
-    role: "client",
-    status: "passive",
+    isAdmin: "client",
+    isActive: "passive",
   },
 ];
 
