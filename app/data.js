@@ -78,6 +78,7 @@ export const users = [
   {
     username: "Johne",
     email: "johne.gmail.com",
+    address: "New York",
     createdAt: "Nov 22 2023",
     isAdmin: "client",
     isActive: "active",
@@ -85,6 +86,7 @@ export const users = [
   {
     username: "Dhoe",
     email: "dhoe.gmail.com",
+    address: "Dtaka",
     createdAt: "Mer 25 2023",
     isAdmin: "client",
     isActive: "passive",
@@ -92,6 +94,7 @@ export const users = [
   {
     username: "Dhoe",
     email: "dhoe.gmail.com",
+    address: "Barisal",
     createdAt: "Mer 25 2023",
     isAdmin: "client",
     isActive: "passive",
@@ -99,6 +102,7 @@ export const users = [
   {
     username: "Dhoe",
     email: "dhoe.gmail.com",
+    address: "Khulna",
     createdAt: "Mer 25 2023",
     isAdmin: "client",
     isActive: "passive",

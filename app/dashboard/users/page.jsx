@@ -3,12 +3,12 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "../../components/dashboard/dashboard.module.css";
 import Pagination from "@/app/components/dashboard/pagination";
-// import { users } from "@/app/data"; // demy data
+// import { users } from "@/app/data";
 import { fetchUsers } from "@/app/lib/fetcher";
 
 const UserPage = async ({ searchParams }) => {
   const q = searchParams?.q || "";
-  const users = await fetchUsers(q);
+  const { count, users } = await fetchUsers(q);
 
   return (
     <div className="bg-[var(--bgSoft)] p-4 rounded-sm">
