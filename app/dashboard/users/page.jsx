@@ -8,7 +8,9 @@ import { fetchUsers } from "@/app/lib/fetcher";
 
 const UserPage = async ({ searchParams }) => {
   const q = searchParams?.q || "";
-  const { count, users } = await fetchUsers(q);
+  const page = searchParams?.page || 1;
+
+  const { count, users } = await fetchUsers(q, page);
 
   return (
     <div className="bg-[var(--bgSoft)] p-4 rounded-sm">
@@ -64,7 +66,7 @@ const UserPage = async ({ searchParams }) => {
           ))}
         </tbody>
       </table>
-      <Pagination />
+      <Pagination count={count} />
     </div>
   );
 };

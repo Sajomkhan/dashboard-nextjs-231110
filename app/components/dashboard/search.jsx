@@ -12,11 +12,12 @@ const Search = ({ placeholder }) => {
   const { replace } = useRouter();
 
   const handleSearch = useDebouncedCallback((e) => {
+    // uses 'useDebouncedCallback' due to prevent user's abusive interavtivitis
     const params = new URLSearchParams(searchParams);
-    // params.set("page", 1);
+    params.set("page", 1);
 
     if (e.target.value) {
-      e.target.value.length > 1 && params.set("q", e.target.value);
+      e.target.value.length > 2 && params.set("q", e.target.value);
     } else {
       params.delete("q");
     }
