@@ -3,9 +3,15 @@ import Image from "next/image";
 import styles from "../../components/dashboard/dashboard.module.css";
 import Pagination from "@/app/components/dashboard/pagination";
 import Link from "next/link";
-import { products } from "@/app/data";
+// import { products } from "@/app/data";
+import { searchParams } from "next/navigation";
+import { fetchProducts } from "@/app/lib/fetcher";
 
 const ProductsPage = () => {
+  const q = searchParams?.q || "";
+  const pageNumber = searchParams?.page || 1;
+  const { count, products } = fetchProducts(q, pageNumber);
+
   return (
     <div className="bg-[var(--bgSoft)] p-4 rounded-sm">
       <div className="flex justify-between items-center mr-4 mb-7">
@@ -28,13 +34,13 @@ const ProductsPage = () => {
         </thead>
         {/* --------------Table Body----------------- */}
         <tbody>
-          {products.map((product) => (
+          {products?.map((product) => (
             <tr key={product.name}>
               <td>
                 <div className="flex gap-3 items-center">
                   <Image
-                    src="/noproduct.jpg"
-                    alt=""
+                    src={product.img || "/noproduct.jpg"}
+                    alt="product image"
                     width={40}
                     height={40}
                     className="rounded-sm"

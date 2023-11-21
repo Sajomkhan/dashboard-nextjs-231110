@@ -35,7 +35,7 @@ const UserPage = async ({ searchParams }) => {
         </thead>
         {/* --------------Table Body----------------- */}
         <tbody>
-          {users.map((user) => (
+          {users?.map((user) => (
             <tr key={user.username}>
               <td>
                 <div className="flex gap-3 items-center">

@@ -1,8 +1,9 @@
 "use client";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
-const disable = "btn text-gray-400 bg-[var(--deactive)] cursor-not-allowed";
-const anabale = "btn text-gray-700 bg-[var(--active)]";
+const buttonDisable =
+  "btn text-gray-400 bg-[var(--deactive)] cursor-not-allowed";
+const buttonAnabale = "btn text-gray-700 bg-[var(--active)]";
 
 const Pagination = ({ count }) => {
   const searchParams = useSearchParams();
@@ -27,13 +28,13 @@ const Pagination = ({ count }) => {
   return (
     <div className="flex justify-between mt-6 px-2">
       <button
-        className={`${!hasPrev ? disable : anabale}`}
+        className={`${!hasPrev ? buttonDisable : buttonAnabale}`}
         onClick={() => handleChangePage("prev")}
       >
         &#8592; Prev
       </button>
       <button
-        className={`${!hasNext ? disable : anabale}`}
+        className={`${!hasNext ? buttonDisable : buttonAnabale}`}
         onClick={() => handleChangePage("next")}
       >
         Next &#8594;
