@@ -7,10 +7,10 @@ import Link from "next/link";
 import { searchParams } from "next/navigation";
 import { fetchProducts } from "@/app/lib/fetcher";
 
-const ProductsPage = () => {
+const ProductsPage = async ({ searchParams }) => {
   const q = searchParams?.q || "";
   const pageNumber = searchParams?.page || 1;
-  const { count, products } = fetchProducts(q, pageNumber);
+  const { count, products } = await fetchProducts(q, pageNumber);
 
   return (
     <div className="bg-[var(--bgSoft)] p-4 rounded-sm">
@@ -39,7 +39,8 @@ const ProductsPage = () => {
               <td>
                 <div className="flex gap-3 items-center">
                   <Image
-                    src={product.img || "/noproduct.jpg"}
+                    src={"/noproduct.jpg"}
+                    // src={product.img || "/noproduct.jpg"}
                     alt="product image"
                     width={40}
                     height={40}
@@ -50,11 +51,11 @@ const ProductsPage = () => {
               </td>
               <td>{product.desc}</td>
               <td>{product.price}</td>
-              <td>{product.createdAt}</td>
+              <td>{product.createdAt?.toString().splice(4, 16)}</td>
               <td>{product.stock}</td>
               <td>
                 <div className="flex gap-4">
-                  <Link href="/dashboard/products/id">
+                  <Link href={`/dashboard/products/${product.id}`}>
                     <button className={`btn_primary`}>View</button>
                   </Link>
                   <button className={`btn_danger`}>Delete</button>
@@ -64,7 +65,7 @@ const ProductsPage = () => {
           ))}
         </tbody>
       </table>
-      <Pagination />
+      <Pagination count={count} />
     </div>
   );
 };
