@@ -1,5 +1,6 @@
 import Image from "next/image";
 import styles from "../../../components/dashboard/dashboard.module.css";
+import { addUser } from "@/app/lib/actions";
 
 const AddUser = () => {
   return (
@@ -18,7 +19,7 @@ const AddUser = () => {
       </div>
       {/* --------------Form div---------------- */}
       <form
-        action=""
+        action={addUser}
         className={`w-[600px] bg-[var(--bgSoft)] flex flex-wrap gap-7 p-10 rounded-lg`}
       >
         <div className="flex flex-col gap-1">
