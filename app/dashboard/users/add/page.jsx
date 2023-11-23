@@ -32,21 +32,30 @@ const AddUser = () => {
         </div>
         <div className="flex flex-col gap-1">
           <label htmlFor="password">Password:</label>
-          <input type="text" placeholder="Passowrd" name="password" required />
+          <input
+            type="password"
+            placeholder="Password"
+            name="password"
+            required
+          />
         </div>
         <div className="flex flex-col gap-1">
           <label htmlFor="isAdmin">Is Admin:</label>
           <select name="isAdmin" id="isAdmin">
-            <option selected>Select role</option>
+            <option>Select role</option>
             <option value={true}>Yes</option>
-            <option value={false}>No</option>
+            <option value={false} selected>
+              No
+            </option>
           </select>
         </div>
         <div className="flex flex-col gap-1">
           <label htmlFor="isActive">Is Active:</label>
           <select name="isActive" id="isActive">
             <option selected>select active</option>
-            <option value={true}>Yes</option>
+            <option value={true} selected>
+              Yes
+            </option>
             <option value={false}>No</option>
           </select>
         </div>

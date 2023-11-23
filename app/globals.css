@@ -64,9 +64,9 @@ input::placeholder, textarea::placeholder{
   color: #8888;
 }
 
-select{
+/* select{
   color: #aaaa;
-}
+} */
 
 .gradient{
   background: linear-gradient(to bottom, #194c33, #bbb);
