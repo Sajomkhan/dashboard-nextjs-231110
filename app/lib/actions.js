@@ -1,8 +1,10 @@
 import { revalidatePath } from "next/cache";
 import { connectDB } from "./connection";
-import { User } from "./models";
+import { Product, User } from "./models";
 import { redirect } from "next/navigation";
+import bcrypt from "bcrypt";
 
+// ---------------------Add User---------------------//
 export const addUser = async (formData) => {
   "use server";
   const { username, email, password, img, isAdmin, isActive, address } =
@@ -10,10 +12,13 @@ export const addUser = async (formData) => {
 
   try {
     connectDB;
+    const salt = await bcrypt.genSalt(10);
+    const hashedPassword = await bcrypt.hash(password, salt);
+
     const newUser = new User({
       username,
       email,
-      password,
+      password: hashedPassword,
       img,
       isAdmin,
       isActive,
@@ -29,27 +34,72 @@ export const addUser = async (formData) => {
   redirect("/dashboard/users");
 };
 
+// ------------------Add User---------------------//
 // export const addUser = async (formData) => {
-//   "use server";
-//   const { username, email, password, img, isAdmin, isActive, address } =
-//     Object.fromEntries(formData);
+//   const data = Object.fromEntries(formData);
 
 //   try {
 //     connectDB;
-//     const newUser = await User.create({
-//       username,
-//       email,
-//       password,
-//       img,
-//       isAdmin,
-//       isActive,
-//       address,
-//     });
+//     const newUser = await User.create(data);
 //     return new NextResponse(JSON.stringify(newUser), { status: 200 });
-
-//     // await newUser.save();
 //   } catch (err) {
 //     console.log(err);
 //     throw new Error("Failed to create user");
 //   }
 // };
+
+// ------------------Add Product---------------------//
+export const addProduct = async (formData) => {
+  "use server";
+  const { title, desc, price, stock, color, img } =
+    Object.fromEntries(formData);
+
+  try {
+    connectDB;
+    const newProduct = new Product({
+      title,
+      desc,
+      price,
+      stock,
+      color,
+      img,
+    });
+
+    await newProduct.save();
+  } catch (err) {
+    console.log(err);
+    throw new Error("Failed to create product");
+  }
+  revalidatePath("/dashboard/products");
+  redirect("/dashboard/products");
+};
+
+// ----------------Delete Product-------------------//
+export const deleteUser = async (formData) => {
+  "use server";
+  const { id } = Object.fromEntries(formData);
+
+  try {
+    connectDB;
+    await User.findByIdAndDelete(id);
+  } catch (err) {
+    console.log(err);
+    throw new Error("Failed to delete user");
+  }
+  revalidatePath("/dashboard/users");
+};
+
+// ----------------Delete User-------------------//
+export const deleteProduct = async (formData) => {
+  "use server";
+  const { id } = Object.fromEntries(formData);
+
+  try {
+    connectDB;
+    await Product.findByIdAndDelete(id);
+  } catch (err) {
+    console.log(err);
+    throw new Error("Failed to delete product");
+  }
+  revalidatePath("/dashboard/products");
+};

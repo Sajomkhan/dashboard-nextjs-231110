@@ -5,6 +5,7 @@ import styles from "../../components/dashboard/dashboard.module.css";
 import Pagination from "@/app/components/dashboard/pagination";
 // import { users } from "@/app/data";
 import { fetchUsers } from "@/app/lib/fetcher";
+import { deleteUser } from "@/app/lib/actions";
 
 const UserPage = async ({ searchParams }) => {
   const q = searchParams?.q || "";
@@ -59,7 +60,10 @@ const UserPage = async ({ searchParams }) => {
                   <Link href={`/dashboard/users/${user._id}`}>
                     <button className={`btn_primary`}>View</button>
                   </Link>
-                  <button className={`btn_danger`}>Delete</button>
+                  <form action={deleteUser}>
+                    <input type="hidden" name="id" value={user.id} />
+                    <button className={`btn_danger`}>Delete</button>
+                  </form>
                 </div>
               </td>
             </tr>

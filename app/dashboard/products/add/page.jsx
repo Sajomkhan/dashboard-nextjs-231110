@@ -1,5 +1,6 @@
 import Image from "next/image";
 import styles from "../../../components/dashboard/dashboard.module.css";
+import { addProduct } from "@/app/lib/actions";
 
 const AddProduct = () => {
   return (
@@ -18,7 +19,7 @@ const AddProduct = () => {
       </div>
       {/* --------------Form div---------------- */}
       <form
-        action=""
+        action={addProduct}
         className={`w-[600px] bg-[var(--bgSoft)] flex flex-wrap gap-7 p-10 rounded-lg`}
       >
         <div className="flex flex-col gap-1">
@@ -40,12 +41,12 @@ const AddProduct = () => {
         </div>
         <div className="flex flex-col gap-1">
           <label htmlFor="color">Color:</label>
-          <input type="text" placeholder="Color" name="color" required />
+          <input type="text" placeholder="Color" name="color" />
         </div>
         <div className="flex flex-col gap-1">
           <label htmlFor="cat">Category:</label>
           <select name="cat" id="cat">
-            <option selected>Select Category</option>
+            <option selected>--- Select ---</option>
             <option value="kitchen">Kitchen</option>
             <option value="computer">Computer</option>
             <option value="phone">Phone</option>
