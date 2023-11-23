@@ -1,6 +1,7 @@
 import { connectDB } from "./connection";
 import { Product, User } from "./models";
 
+// -----------------Fetch Users------------------//
 export const fetchUsers = async (q, page) => {
   const regex = new RegExp(q, "i");
 
@@ -19,6 +20,19 @@ export const fetchUsers = async (q, page) => {
   }
 };
 
+// -----------------Fetch Single User and Update------------------//
+export const fetchSingleUser = async (id) => {
+  try {
+    connectDB();
+    const user = await User.findById(id);
+    return user;
+  } catch (err) {
+    console.log(err);
+    throw new Error("Failed to update user!");
+  }
+};
+
+// -----------------Fetch Products------------------//
 export const fetchProducts = async (q, pageNumber) => {
   const regex = new RegExp(q, "i");
 
@@ -34,5 +48,17 @@ export const fetchProducts = async (q, pageNumber) => {
   } catch (err) {
     console.log(err);
     throw new Error("Failed to fetch products!");
+  }
+};
+
+// -----------------Fetch Single Product and Update------------------//
+export const fetchSingleProduct = async (id) => {
+  try {
+    connectDB();
+    const product = await Product.findById(id);
+    return product;
+  } catch (err) {
+    console.log(err);
+    throw new Error("Failed to update product!");
   }
 };

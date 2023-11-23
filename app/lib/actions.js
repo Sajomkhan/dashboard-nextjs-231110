@@ -48,6 +48,37 @@ export const addUser = async (formData) => {
 //   }
 // };
 
+// ---------------------Update User---------------------//
+export const updateUser = async (formData) => {
+  "use server";
+  const { id, username, email, password, img, isAdmin, isActive, address } =
+    Object.fromEntries(formData);
+
+  try {
+    connectDB;
+    const updateFields = {
+      id,
+      username,
+      email,
+      password,
+      img,
+      isAdmin,
+      isActive,
+      address,
+    };
+    Object.keys(updateFields).forEach(
+      (key) => updateFields[key] === "" || undefined
+    ) && delete updateFields[key];
+
+    await User.findByIdAndUpdate(id, updateFields);
+  } catch (err) {
+    console.log(err);
+    throw new Error("Failed to update user");
+  }
+  revalidatePath("/dashboard/users");
+  redirect("/dashboard/users");
+};
+
 // ------------------Add Product---------------------//
 export const addProduct = async (formData) => {
   "use server";
