@@ -37,7 +37,7 @@ const AddProduct = () => {
         </div>
         <div className="flex flex-col gap-1">
           <label htmlFor="stock">Stock:</label>
-          <input type="text" placeholder="Stock" name="stock" required />
+          <input type="text" placeholder="Stock" name="stock" />
         </div>
         <div className="flex flex-col gap-1">
           <label htmlFor="color">Color:</label>

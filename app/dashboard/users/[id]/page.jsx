@@ -42,20 +42,24 @@ const SingleUser = async ({ params }) => {
           <label htmlFor="isAdmin">Is Admin:</label>
           <select name="isAdmin" id="isAdmin">
             <option>--- Select role ---</option>
-            <option value={false} selected>
+            <option value={true} selected={user.isAdmin}>
+              Yes
+            </option>
+            <option value={false} selected={!user.isAdmin}>
               No
             </option>
-            <option value={true}>Yes</option>
           </select>
         </div>
         <div className="flex flex-col gap-1">
           <label htmlFor="isActive">Is Active:</label>
           <select name="isActive" id="isActive">
             <option>--- Select active ---</option>
-            <option value={true} selected>
+            <option value={true} selected={user.isActive}>
               Yes
             </option>
-            <option value={false}>No</option>
+            <option value={false} selected={!user.isActive}>
+              No
+            </option>
           </select>
         </div>
         <div className="flex flex-col gap-1">
