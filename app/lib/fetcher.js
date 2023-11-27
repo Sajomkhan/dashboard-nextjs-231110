@@ -40,7 +40,7 @@ export const fetchProducts = async (q, pageNumber) => {
 
   try {
     connectDB();
-    const count = await Product.find({ title: { $regex: regex } }).count(); // this will count only the number of users
+    const count = await Product.find({ title: { $regex: regex } }).count(); // this will count only the number of product
     const products = await Product.find({ title: { $regex: regex } })
       .limit(ITEM_PER_PAGE)
       .skip(ITEM_PER_PAGE * (pageNumber - 1));
