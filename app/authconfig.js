@@ -1,4 +1,5 @@
 export const authConfig = {
+  providers:[],
   pages: {
     signIn: "/login",
   },
@@ -8,12 +9,11 @@ export const authConfig = {
       const isOnDashboard = request.nextUrl.pathname.startsWith("/dashboard");
       if (isOnDashboard) {
         if (isLoggedIn) return true;
-        return false; // Redirect unauthenticated users to login page
+        return false;
       } else if (isLoggedIn) {
-        return Response.redirect(new URL("/dashboard", nextUrl));
+        return Response.redirect(new URL("/dashboard", request.nextUrl));
       }
       return true;
     },
   },
-  providers: [], // Add providers with an empty array for now
 };

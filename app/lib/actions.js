@@ -3,6 +3,7 @@ import { connectDB } from "./connection";
 import { Product, User } from "./models";
 import { redirect } from "next/navigation";
 import bcrypt from "bcrypt";
+import { signIn } from "../auth";
 
 // ---------------------Add User---------------------//
 export const addUser = async (formData) => {
@@ -163,4 +164,15 @@ export const updateProduct = async (formData) => {
   }
   revalidatePath("/dashboard/products");
   redirect("/dashboard/products");
+};
+
+// ---------------------Authentication---------------------//
+export const authenticate = async (formData) => {
+  "use server";
+  const { username, password } = Object.fromEntries(formData);
+  try {
+    await signIn("credentials", { username, password });
+  } catch (err) {
+    return "Wrong Credentials!";
+  }
 };
