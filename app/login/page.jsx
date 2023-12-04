@@ -1,5 +1,4 @@
 import styles from "../components/dashboard/dashboard.module.css";
-import { authenticate } from "../lib/actions";
 
 const LoginPage = () => {
   return (
@@ -7,7 +6,6 @@ const LoginPage = () => {
       <div className="w-80 bg-[var(--bgSoft)] p-5 rounded-lg">
         <h1 className="text-xl mb-6 text-center">Login</h1>
         <form
-          action={authenticate}
           className={`${styles.login} flex flex-col gap-8`}
         >
           <di5 className="flex flex-col gap-2">

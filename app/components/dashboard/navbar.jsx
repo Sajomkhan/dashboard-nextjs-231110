@@ -1,5 +1,6 @@
 "use client";
 import { usePathname } from "next/navigation";
+import Link from "next/link";
 import {
   MdNotifications,
   MdOutlineChat,
@@ -17,6 +18,7 @@ const Navbar = () => {
           <MdSearch size={18} />
           <input type="text" placeholder="Search" />
         </div>
+        <Link href={'/'}>Home</Link>
         <div className="flex gap-3 items-center">
           <MdOutlineChat
             className="cursor-pointer hover:text-teal-600"
