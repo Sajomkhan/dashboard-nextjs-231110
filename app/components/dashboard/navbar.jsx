@@ -7,9 +7,12 @@ import {
   MdPublic,
   MdSearch,
 } from "react-icons/md";
+import { UserButton, useUser } from "@clerk/nextjs";
 
 const Navbar = () => {
   const pathname = usePathname();
+  const {user, isLoaded} = useUser()
+
   return (
     <div className="flex items-center justify-between bg-[var(--bgSoft)] px-7 py-3">
       <div className="uppercase font-bold">{pathname.split("/").pop()}</div>
@@ -18,7 +21,7 @@ const Navbar = () => {
           <MdSearch size={18} />
           <input type="text" placeholder="Search" />
         </div>
-        <Link href={'/'}>Home</Link>
+        <Link href={'/'} className="hover:text-[var(--primary)] font-semibold">Home</Link>
         <div className="flex gap-3 items-center">
           <MdOutlineChat
             className="cursor-pointer hover:text-teal-600"
@@ -28,7 +31,19 @@ const Navbar = () => {
             className="cursor-pointer hover:text-teal-600"
             size={18}
           />
-          <MdPublic className="cursor-pointer hover:text-teal-600" size={18} />
+
+          { !user && 
+            <>
+              <MdPublic className="cursor-pointer hover:text-teal-600" size={18} />
+            </>
+          }
+
+          { user && isLoaded && 
+            <>
+              <UserButton afterSignOutUrl="/" />
+            </>
+          }
+
         </div>
       </div>
     </div>
