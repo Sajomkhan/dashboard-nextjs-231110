@@ -30,16 +30,16 @@ export const menuItems = [
         path: "/dashboard/products",
         icon: <MdShoppingBag />,
       },
-      {
-        title: "Transactions",
-        path: "/dashboard/transactions",
-        icon: <MdAttachMoney />,
-      },
     ],
   },
   {
     title: "Analytics",
     list: [
+      {
+        title: "Transactions",
+        path: "/dashboard/transactions",
+        icon: <MdAttachMoney />,
+      },
       {
         title: "Revenue",
         path: "/dashboard/revenue",

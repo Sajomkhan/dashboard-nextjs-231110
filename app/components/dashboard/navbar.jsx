@@ -21,7 +21,7 @@ const Navbar = () => {
           <MdSearch size={18} />
           <input type="text" placeholder="Search" />
         </div>
-        <Link href={'/'} className="hover:text-[var(--primary)] font-semibold">Home</Link>
+        <Link href={'/'} className="hover:text-[var(--primary)]">Home</Link>
         <div className="flex gap-3 items-center">
           <MdOutlineChat
             className="cursor-pointer hover:text-teal-600"

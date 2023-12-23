@@ -8,12 +8,12 @@ export default function Home() {
   const {user, isLoaded} = useUser()
   return (
     <main className="min-h-screen flex flex-col items-center justify-center">
-      <div className="w-full h-20 fixed top-0 flex justify-between items-center px-24 bg-[var(--bgSoft)] font-semibold">
-        <div className="text-xl text-[var(--primary)]">
+      <div className="w-full h-20 fixed top-0 flex justify-between items-center px-24 bg-[var(--bgSoft)]">
+        <div className="text-xl">
           Dashboard Demonestration NextJS-14 
         </div>
         <div className="flex gap-4">
-          <Link href={"/dashboard"} className="hover:text-[var(--primary)]">
+          <Link href={"/dashboard"} className="hover:text-[var(--primary)] bg-slate-900 px-4 py-2 rounded-md">
             Dashboard
           </Link>
           {
@@ -41,6 +41,7 @@ export default function Home() {
             height={300}
           />
         </Link>
+        <a href={"/dashboard"}  className="btn_primary w-fit px-4 py-3 mt-9" > Go to Dashboard &#8594; </a>
       </div>
 
     </main>
